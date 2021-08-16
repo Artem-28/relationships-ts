@@ -1,6 +1,6 @@
 import {PointerKey, StatusType} from "@/types/common";
-import {IConnect} from "@/interfaces/Relationships/IConnect";
-import {ICoordinationMap} from "@/interfaces/relationshipsBox/itemsType/ICoordinationPoint";
+import {IConnect} from "@/types/interfaces/Relationships/modules";
+import {ICoordinationMap} from "@/types/interfaces/Coordination/ICoordination";
 
 export interface IUpdatePointStatus {
     boxId: number,

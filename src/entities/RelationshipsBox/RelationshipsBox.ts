@@ -1,4 +1,5 @@
-import {IBoxPointer, IBoxPointersMap, IRelationshipsBox} from "@/interfaces/relationshipsBox/IRelationshipsBox";
+import {IRelationshipsBox} from "@/types/interfaces/Box/IRelationshipsBox";
+import {IBoxPointer, IBoxPointersMap} from "@/types/interfaces/Box/modules";
 import {PointerKey} from "@/types/common";
 
 export default class RelationshipsBox implements IRelationshipsBox{

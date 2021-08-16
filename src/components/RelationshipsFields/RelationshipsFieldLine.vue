@@ -4,7 +4,6 @@
         v-for="(coords, key) in coordinationLine"
         :key="key"
         stroke="black"
-
         :x1="getBoxById(coords.firstConnect.boxId).getPointerByType(coords.firstConnect.pointKey).coordinates.x"
         :x2="getBoxById(coords.secondConnect.boxId).getPointerByType(coords.secondConnect.pointKey).coordinates.x"
         :y1="getBoxById(coords.firstConnect.boxId).getPointerByType(coords.firstConnect.pointKey).coordinates.y"
@@ -16,6 +15,7 @@
 <script lang="ts">
 import Vue from "vue";
 import {mapGetters} from "vuex";
+
 export default Vue.extend({
   name: "RelationshipsFieldLine",
   computed: {
@@ -27,8 +27,3 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
-.relationships-field__line {
-}
-
-</style>

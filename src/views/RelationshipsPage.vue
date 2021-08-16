@@ -38,10 +38,13 @@ export default Vue.extend({
 
 <style lang="scss">
 .relationships-page {
-  border: 1px solid black;
+  &__buttons {
+    margin-bottom: 20px;
+  }
 }
 .relationships-field {
   position: relative;
+  max-height: 700px;
 }
 
 </style>

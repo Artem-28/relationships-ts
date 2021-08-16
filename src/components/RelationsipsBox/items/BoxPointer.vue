@@ -5,19 +5,22 @@
       @click="$emit('click')"
   >
     <box-pointer-delete-button v-if="dataPoint.getStatus() === 'ready'"/>
-    <loader-box-pointer v-if="dataPoint.getStatus() === 'wait'"/>
+    <box-pointer-loader v-if="dataPoint.getStatus() === 'wait'"/>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import {IBoxPointer} from "@/interfaces/relationshipsBox/IRelationshipsBox";
-import LoaderBoxPointer from "@/components/RelationsipsBox/items/LoaderBoxPointer.vue";
+import BoxPointerLoader from "@/components/RelationsipsBox/items/BoxPointerLoader.vue";
 import BoxPointerDeleteButton from "@/components/RelationsipsBox/items/BoxPointerDeleteButton.vue";
+import {IBoxPointer} from "@/types/interfaces/Box/modules";
 
 export default Vue.extend({
   name: "BoxPointer",
-  components: {BoxPointerDeleteButton, LoaderBoxPointer},
+  components: {
+    BoxPointerDeleteButton,
+    BoxPointerLoader
+  },
   props: {
     dataPoint: {
       type: Object as () => IBoxPointer

@@ -1,12 +1,11 @@
-import {IBoxPointer} from "@/interfaces/relationshipsBox/IRelationshipsBox";
-import {IRelationship} from "@/interfaces/relationshipsBox/itemsType/IRelationship";
-import {ICoordinationPoint} from "@/interfaces/relationshipsBox/itemsType/ICoordinationPoint";
-import {StatusType} from "@/types/common";
+import {IBoxPointer} from "@/types/interfaces/Box/modules";
+import {IRelationship} from "@/types/interfaces/Relationships/IRelationship";
+import {ICoordination} from "@/types/interfaces/Coordination/modules";
 
 export default class BoxPointer implements IBoxPointer {
     relationship: IRelationship
-    coordinates: ICoordinationPoint
-    constructor(relationship: IRelationship, coordinates: ICoordinationPoint) {
+    coordinates: ICoordination
+    constructor(relationship: IRelationship, coordinates: ICoordination) {
         this.relationship = relationship
         this.coordinates = coordinates
     }

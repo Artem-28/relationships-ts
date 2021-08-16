@@ -1,4 +1,4 @@
-import {IConnect} from "@/interfaces/Relationships/IConnect";
+import {IConnect} from "@/types/interfaces/Relationships/modules";
 
 export default {
     namespaced: true,

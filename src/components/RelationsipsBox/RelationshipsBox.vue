@@ -20,12 +20,11 @@
 
 <script lang="ts">
 import Vue from "vue";
-import {IBoxPointer, IRelationshipsBox} from "@/interfaces/relationshipsBox/IRelationshipsBox";
-import Coordination from "@/entities/RelationshipsBox/Coordination";
-import BoxPointer from "@/components/RelationsipsBox/items/BoxPointer.vue";
 import {mapMutations} from "vuex";
+import BoxPointer from "@/components/RelationsipsBox/items/BoxPointer.vue";
 import BoxDeleteButton from "@/components/RelationsipsBox/items/BoxDeleteButton.vue";
-
+import {IRelationshipsBox} from "@/types/interfaces/Box/IRelationshipsBox";
+import Coordination from "@/entities/Coordination/Coordination";
 
 export default Vue.extend({
   name: "RelationshipsBox",
@@ -59,21 +58,17 @@ export default Vue.extend({
       updateCoordinationPointer: "Boxes/updateCoordinationPointer"
     }),
     start( event: any ) {
-      //Устанавливаем сдвиг относительно указателя мыши
       this.shiftX = event.clientX - this.box.getBoundingClientRect().left;
       this.shiftY = event.clientY - this.box.getBoundingClientRect().top;
-      // удаляем браузерное событие
       this.box.ondragstart = () => false;
-      // перетаскиваем box под указатель мыши
       this.moveAt(event);
-      // передвигаем box при событии mousemove
       document.addEventListener('mousemove', this.onMouseMove);
     },
-    // передвигаем box при событии mousemove
+
     onMouseMove(event : any) {
       this.moveAt(event);
     },
-    // переносит box на координаты (pageX, pageY),
+
     moveAt(event : any) {
       this.calculateCoordsPoints()
       this.left = event.pageX - this.fieldCoordinates.left - this.shiftX + 'px';
@@ -118,9 +113,9 @@ export default Vue.extend({
 .relationships-box {
   z-index: 100;
   background: green;
-  opacity: 1;
   width: 100px;
   height: 100px;
+  border-radius: 10px;
 }
 
 </style>

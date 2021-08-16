@@ -1,6 +1,6 @@
 <template>
   <div class="relationships-box__point-delete">
-    <img :src="require(`@/assets/icon/remove.png`)">
+    <img class="full-size" :src="require(`@/assets/icon/remove.png`)">
   </div>
 </template>
 
@@ -19,15 +19,9 @@ export default Vue.extend({
   left: -4px;
   position: absolute;
   cursor: pointer;
-  img {
-    width: 100%;
-    height: 100%;
-    display: none;
-  }
+  img { display: none }
   &:hover {
-    img {
-      display: block;
-    }
+    img { display: block }
   }
 }
 

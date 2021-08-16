@@ -12,10 +12,10 @@
 
 <script lang="ts">
 import Vue from "vue";
-import RelationshipsBox from "@/components/RelationsipsBox/RelationshipsBox.vue";
 import {mapGetters, mapMutations} from "vuex";
-import {IConnect} from "@/interfaces/Relationships/IConnect";
+import RelationshipsBox from "@/components/RelationsipsBox/RelationshipsBox.vue";
 import {generateKeyForMap} from "@/helpers/common";
+import {IConnect} from "@/types/interfaces/Relationships/modules";
 
 export default Vue.extend({
   name: "RelationshipsFieldBoxes",
@@ -105,5 +105,4 @@ export default Vue.extend({
   overflow: hidden;
   background: rgba(127, 213, 245, 1);
 }
-
 </style>

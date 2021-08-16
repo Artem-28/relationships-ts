@@ -3,7 +3,7 @@
       class="relationships-box__delete-btn"
       @click="$emit('click')"
   >
-    <img :src="require(`@/assets/icon/remove.png`)">
+    <img class="full-size" :src="require(`@/assets/icon/remove.png`)">
   </div>
 </template>
 
@@ -22,11 +22,7 @@ export default Vue.extend({
   border-radius: 50%;
   right: 0;
   top: 0;
-  img {
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-  }
+  img { cursor: pointer; }
 }
 
 </style>

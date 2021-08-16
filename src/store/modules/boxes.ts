@@ -1,32 +1,19 @@
 import RelationshipsBox from "@/entities/RelationshipsBox/RelationshipsBox";
-import Coordination from "@/entities/RelationshipsBox/Coordination";
-import {IRelationshipsBox} from "@/interfaces/relationshipsBox/IRelationshipsBox";
+import Coordination from "@/entities/Coordination/Coordination";
+import {IRelationshipsBox} from "@/types/interfaces/Box/IRelationshipsBox";
 import BoxPointer from "@/entities/RelationshipsBox/BoxPointer";
-import {IRelationship} from "@/interfaces/relationshipsBox/itemsType/IRelationship";
+import {IRelationship} from "@/types/interfaces/Relationships/IRelationship";
 import {searchBoxById} from "@/helpers/common";
 import {
     IConnectionOfBoxesData,
     IUpdateCoordinationPointerData,
     IUpdatePointStatus
-} from "@/interfaces/BoxesStore/Boxes";
+} from "@/types/storeType/Boxes";
 
 
 export default {
     namespaced: true,
-    state: [
-        new RelationshipsBox(1, {
-            top: new BoxPointer({ status: 'empty', connect: null, connectId: null }, new Coordination(0, 0)),
-            left: new BoxPointer({ status: 'empty', connect: null, connectId: null }, new Coordination(0, 0)),
-            bottom: new BoxPointer({ status: 'empty', connect: null, connectId: null }, new Coordination(0, 0)),
-            right: new BoxPointer({ status: 'empty', connect: null, connectId: null }, new Coordination(0, 0)),
-        }),
-        new RelationshipsBox(2, {
-            top: new BoxPointer({ status: 'empty', connect: null, connectId: null }, new Coordination(0, 0)),
-            left: new BoxPointer({ status: 'empty', connect: null, connectId: null }, new Coordination(0, 0)),
-            bottom: new BoxPointer({ status: 'empty', connect: null, connectId: null }, new Coordination(0, 0)),
-            right: new BoxPointer({ status: 'empty', connect: null, connectId: null }, new Coordination(0, 0)),
-        }),
-    ],
+    state: [],
     getters: {
         getBoxById: (state: IRelationshipsBox[]) => (id: number): IRelationshipsBox => state.filter(box => box.id === id)[0],
         boxes: (state: IRelationshipsBox[]): IRelationshipsBox[] => state
